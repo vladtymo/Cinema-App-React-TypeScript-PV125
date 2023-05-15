@@ -16,3 +16,14 @@ main {
   width: 90%;
   margin: 10px auto;
 }
+
+ul.movieList {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ul.movieList li {
+  display: inline-block;
+  margin: 5px;
+}
