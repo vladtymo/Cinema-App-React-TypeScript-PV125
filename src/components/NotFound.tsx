@@ -1,10 +1,10 @@
 export default function NotFound() {
     return (
         <>
-            <div>
+            <div style={{ textAlign: 'center' }}>
                 <img width={200} src="https://media3.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif?cid=6c09b952j4ennfdb8t8r153o36qvuld11pdsp952qpyupkga&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="" />
+                <p>Unfortunatelly page does not found!</p>
             </div>
-            <p>Unfortunatelly page does not found!</p>
         </>
     );
 }

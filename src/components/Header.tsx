@@ -12,9 +12,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom';
 
 const pages = [
     { title: 'Movies', route: "/movies" },
+    { title: 'Sessions', route: "/sessions" },
     { title: 'About', route: "/about" }
 ];
 
@@ -93,7 +95,11 @@ export default function Header() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page.title}</Typography>
+                                    <Typography textAlign="center">
+                                        <Link style={{ color: 'black', textDecoration: 'none' }}
+                                            to={page.route}
+                                        >{page.title}</Link>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -103,7 +109,7 @@ export default function Header() {
                         variant="h5"
                         noWrap
                         component="a"
-                        href=""
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -124,7 +130,7 @@ export default function Header() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page.title}
+                                <Link style={{ color: 'white', textDecoration: 'none' }} to={page.route}>{page.title}</Link>
                             </Button>
                         ))}
                     </Box>
