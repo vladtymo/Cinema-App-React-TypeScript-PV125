@@ -1,14 +1,23 @@
 import React from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import MovieList from './components/MovieList';
+import About from './components/About';
+import NotFound from './components/NotFound';
+import Layout from './components/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Header
-      </header>
-      <p>Main Content</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="movies" element={<MovieList />} />
+        {/* <Route path="/sessions" element={<Products />} /> */}
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 
