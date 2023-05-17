@@ -1,5 +1,6 @@
 export interface IMovie {
-    Title: string,
-    Year: number,
-    Poster: string
+    title: string,
+    year: number,
+    duration: Date,
+    coverUrl: string
 };

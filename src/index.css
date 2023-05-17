@@ -27,3 +27,19 @@ ul.movieList li {
   display: inline-block;
   margin: 5px;
 }
+
+.Login {
+  margin-top: 100px;
+}
+.Login h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.Login form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
