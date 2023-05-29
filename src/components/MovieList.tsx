@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 import { IMovie } from "../models/movie";
 import { Box, Grid, Skeleton } from "@mui/material";
 
-const api: string = 'https://rinve-cinema.azurewebsites.net/api/movies';
+const api: string = 'https://cinema-rivne-api.azurewebsites.net/api/movies';
 const palceholderItems = 4;
 
 export default function MovieList() {
@@ -30,11 +30,16 @@ export default function MovieList() {
     }
 
     useEffect(() => {
-        fetch(api).then(x => x.json()).then(data => {
-            console.log(data);
+        const fetchData = async () => {
+            const res = await fetch(api);
 
-            setMovies(data);
-        });
+            if (res.status == 200) {
+                const data = await res.json();
+                setMovies(data);
+            }
+          }
+        
+          fetchData().catch(console.error);
     }, []); // run on component mount
 
     return (
